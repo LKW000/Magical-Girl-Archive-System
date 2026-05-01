@@ -8,7 +8,7 @@ def create_connection():
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="YOUR_PASSWORD_HERE",
+            password="-Goldennight24-",
             database="magical_girl_archive"
         )
 
