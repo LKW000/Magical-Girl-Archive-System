@@ -56,3 +56,15 @@ INSERT INTO character_abilities (character_id, ability_id, mastery_level) VALUES
 (8, 8, 8),
 (9, 7, 9),
 (10, 6, 8);
+
+INSERT INTO contracts (character_id, wish, contract_cost, contract_date, contract_status) VALUES
+(1, 'To save a loved one', 'Burden of cosmic responsibility', '2026-01-01', 'Active'),
+(2, 'To redo the past', 'Endless temporal isolation', '2026-01-02', 'Active'),
+(3, 'To heal another person', 'Emotional instability', '2026-01-03', 'Broken'),
+(4, 'To survive an accident', 'Constant battle obligation', '2026-01-04', 'Completed'),
+(5, 'To save family from poverty', 'Loss of innocence', '2026-01-05', 'Active'),
+(6, 'To receive happiness', 'Identity distortion', '2026-01-06', 'Corrupted'),
+(7, 'To protect her town', 'Mental strain', '2026-01-07', 'Active'),
+(8, 'To find her sister', 'Emotional burden', '2026-01-08', 'Active'),
+(9, 'To protect others', 'Isolation', '2026-01-09', 'Active'),
+(10, 'To help a friend', 'Psychological fatigue', '2026-01-10', 'Active');
