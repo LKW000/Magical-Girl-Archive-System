@@ -166,11 +166,9 @@ def delete_character(connection, character_id):
         print(f"Error deleting character: {e}")
         
 def apply_state_change(connection, character_id, new_stability, new_corruption, emotional_state, notes):
-    """Update character state and log the change as one transaction."""
+    """Update character state and add a new state log."""
     try:
         cursor = connection.cursor()
-
-        connection.start_transaction()
 
         update_query = """
             UPDATE characters
