@@ -164,3 +164,37 @@ def delete_character(connection, character_id):
 
     except Error as e:
         print(f"Error deleting character: {e}")
+        
+def apply_state_change(connection, character_id, new_stability, new_corruption, emotional_state, notes):
+    """Update character state and log the change as one transaction."""
+    try:
+        cursor = connection.cursor()
+
+        connection.start_transaction()
+
+        update_query = """
+            UPDATE characters
+            SET stability_level = %s
+            WHERE character_id = %s
+        """
+        cursor.execute(update_query, (new_stability, character_id))
+
+        insert_log_query = """
+            INSERT INTO state_log
+            (character_id, stability_level, corruption_level, emotional_state, recorded_date, notes)
+            VALUES (%s, %s, %s, %s, CURDATE(), %s)
+        """
+        cursor.execute(insert_log_query, (
+            character_id,
+            new_stability,
+            new_corruption,
+            emotional_state,
+            notes
+        ))
+
+        connection.commit()
+        print("State updated and logged successfully.")
+
+    except Error as e:
+        connection.rollback()
+        print(f"Transaction failed: {e}")
