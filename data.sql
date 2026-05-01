@@ -27,3 +27,15 @@ INSERT INTO characters (name, age, origin, current_status, stability_level) VALU
 ('Yachiyo Nanami', 19, 'Kamihama City', 'Active', 78),
 ('Tsuruno Yui', 17, 'Kamihama City', 'Active', 88),
 ('Mifuyu Azusa', 18, 'Kamihama City', 'Unstable', 60);
+
+INSERT INTO abilities (ability_name, ability_type, description, power_level) VALUES
+('Reality Manipulation', 'Divine', 'Can alter the structure of reality itself.', 10),
+('Time Manipulation', 'Temporal', 'Can stop, reverse, or loop time.', 10),
+('Healing Magic', 'Support', 'Restores wounds and magical damage.', 7),
+('Ribbon Binding', 'Control', 'Restrains enemies using magical ribbons.', 6),
+('Spear Summoning', 'Weapon', 'Creates and controls magical spears.', 8),
+('Illusion Creation', 'Mental', 'Produces deceptive visual constructs.', 7),
+('Energy Projection', 'Offense', 'Launches concentrated magical blasts.', 8),
+('Barrier Creation', 'Defense', 'Forms magical shields and barriers.', 7),
+('Weapon Summoning', 'Weapon', 'Summons various magical weapons.', 8),
+('Enhanced Agility', 'Physical', 'Boosts movement speed and reflexes.', 6);
