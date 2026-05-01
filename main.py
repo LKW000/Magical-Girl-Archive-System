@@ -7,7 +7,8 @@ from database import (
     add_character,
     add_ability,
     update_character_stability,
-    delete_character
+    delete_character,
+    apply_state_change
 )
 
 
@@ -23,7 +24,8 @@ def display_menu():
     print("6. Add ability")
     print("7. Update character stability")
     print("8. Delete character")
-    print("9. Exit")
+    print("9. Apply state change")
+    print("10. Exit")
 
 
 def main():
@@ -77,8 +79,24 @@ def main():
             character_id = int(input("Character ID to delete: "))
 
             delete_character(connection, character_id)
-
+        
         elif choice == "9":
+            character_id = int(input("Character ID: "))
+            stability = int(input("New Stability: "))
+            corruption = int(input("New Corruption: "))
+            emotional_state = input("Emotional State: ")
+            notes = input("Notes: ")
+
+            apply_state_change(
+                connection,
+                character_id,
+                stability,
+                corruption,
+                emotional_state,
+                notes
+            )
+
+        elif choice == "10":
             print("Closing archive. Goodbye.")
             break
         
