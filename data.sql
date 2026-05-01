@@ -39,3 +39,20 @@ INSERT INTO abilities (ability_name, ability_type, description, power_level) VAL
 ('Barrier Creation', 'Defense', 'Forms magical shields and barriers.', 7),
 ('Weapon Summoning', 'Weapon', 'Summons various magical weapons.', 8),
 ('Enhanced Agility', 'Physical', 'Boosts movement speed and reflexes.', 6);
+
+INSERT INTO character_abilities (character_id, ability_id, mastery_level) VALUES
+(1, 1, 10),
+(1, 3, 8),
+(2, 2, 10),
+(2, 6, 8),
+(3, 3, 7),
+(3, 7, 7),
+(4, 4, 9),
+(4, 9, 8),
+(5, 5, 9),
+(5, 10, 8),
+(6, 6, 7),
+(7, 3, 8),
+(8, 8, 8),
+(9, 7, 9),
+(10, 6, 8);
