@@ -68,3 +68,15 @@ INSERT INTO contracts (character_id, wish, contract_cost, contract_date, contrac
 (8, 'To find her sister', 'Emotional burden', '2026-01-08', 'Active'),
 (9, 'To protect others', 'Isolation', '2026-01-09', 'Active'),
 (10, 'To help a friend', 'Psychological fatigue', '2026-01-10', 'Active');
+
+INSERT INTO transformations (character_id, form_name, trigger_condition, risk_level) VALUES
+(1, 'Ultimate Form', 'Extreme emotional resonance', 10),
+(2, 'Timebreaker Form', 'Temporal overload', 9),
+(3, 'Knight Form', 'Protective desperation', 7),
+(4, 'Veteran Form', 'Combat activation', 6),
+(5, 'Crimson Assault Form', 'Aggressive impulse', 8),
+(6, 'Dream Form', 'Identity fracture', 9),
+(7, 'Guardian Form', 'Protective instinct', 6),
+(8, 'Resolve Form', 'Hope surge', 7),
+(9, 'Sentinel Form', 'Duty trigger', 8),
+(10, 'Support Form', 'Ally distress', 5);
