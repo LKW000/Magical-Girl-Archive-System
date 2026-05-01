@@ -100,3 +100,67 @@ def view_character_abilities(connection):
 
     except Error as e:
         print(f"Error viewing abilities: {e}")
+        
+def add_character(connection, name, age, origin, status, stability):
+    """Add a new character."""
+    try:
+        cursor = connection.cursor()
+        query = """
+            INSERT INTO characters (name, age, origin, current_status, stability_level)
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        cursor.execute(query, (name, age, origin, status, stability))
+        connection.commit()
+        print("Character added successfully.")
+
+    except Error as e:
+        print(f"Error adding character: {e}")
+
+
+def add_ability(connection, name, ability_type, description, power):
+    """Add a new ability."""
+    try:
+        cursor = connection.cursor()
+        query = """
+            INSERT INTO abilities (ability_name, ability_type, description, power_level)
+            VALUES (%s, %s, %s, %s)
+        """
+        cursor.execute(query, (name, ability_type, description, power))
+        connection.commit()
+        print("Ability added successfully.")
+
+    except Error as e:
+        print(f"Error adding ability: {e}")
+
+def update_character_stability(connection, character_id, new_stability):
+    """Update a character's stability."""
+    try:
+        cursor = connection.cursor()
+        query = """
+            UPDATE characters
+            SET stability_level = %s
+            WHERE character_id = %s
+        """
+        cursor.execute(query, (new_stability, character_id))
+        connection.commit()
+        print("Stability updated successfully.")
+
+    except Error as e:
+        print(f"Error updating stability: {e}")
+        
+def delete_character(connection, character_id):
+    """Delete a character."""
+    try:
+        confirm = input("Are you sure you want to delete this character? (y/n): ")
+
+        if confirm.lower() == 'y':
+            cursor = connection.cursor()
+            query = "DELETE FROM characters WHERE character_id = %s"
+            cursor.execute(query, (character_id,))
+            connection.commit()
+            print("Character deleted successfully.")
+        else:
+            print("Deletion cancelled.")
+
+    except Error as e:
+        print(f"Error deleting character: {e}")
