@@ -92,3 +92,15 @@ INSERT INTO weapons (character_id, weapon_name, weapon_type, rarity) VALUES
 (8, 'Hope Crossbow', 'Crossbow', 'Rare'),
 (9, 'Sentinel Blade', 'Sword', 'Epic'),
 (10, 'Silver Staff', 'Staff', 'Common');
+
+INSERT INTO state_log (character_id, stability_level, corruption_level, emotional_state, recorded_date, notes) VALUES
+(1, 90, 10, 'Hopeful', '2026-04-01', 'Maintaining emotional balance.'),
+(2, 65, 35, 'Obsessive', '2026-04-02', 'Temporal loops increasing strain.'),
+(3, 35, 65, 'Despairing', '2026-04-03', 'Emotionally unstable after recent conflict.'),
+(4, 82, 18, 'Focused', '2026-04-04', 'Stable veteran combat state.'),
+(5, 75, 25, 'Aggressive', '2026-04-05', 'Combat effectiveness increased.'),
+(6, 20, 80, 'Fragmented', '2026-04-06', 'Identity destabilization noted.'),
+(7, 57, 43, 'Anxious', '2026-04-07', 'Experiencing increased stress.'),
+(8, 95, 5, 'Determined', '2026-04-08', 'Exceptional morale.'),
+(9, 28, 72, 'Withdrawn', '2026-04-09', 'Near critical condition.'),
+(10, 84, 16, 'Calm', '2026-04-10', 'Stable support condition.');
