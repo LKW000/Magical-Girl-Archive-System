@@ -80,3 +80,15 @@ INSERT INTO transformations (character_id, form_name, trigger_condition, risk_le
 (8, 'Resolve Form', 'Hope surge', 7),
 (9, 'Sentinel Form', 'Duty trigger', 8),
 (10, 'Support Form', 'Ally distress', 5);
+
+INSERT INTO weapons (character_id, weapon_name, weapon_type, rarity) VALUES
+(1, 'Celestial Bow', 'Bow', 'Legendary'),
+(2, 'Chrono Shield', 'Shield', 'Legendary'),
+(3, 'Azure Saber', 'Sword', 'Rare'),
+(4, 'Ribbon Muskets', 'Firearm', 'Epic'),
+(5, 'Crimson Spear', 'Polearm', 'Epic'),
+(6, 'Dream Horn', 'Instrument', 'Rare'),
+(7, 'Guardian Lance', 'Lance', 'Rare'),
+(8, 'Hope Crossbow', 'Crossbow', 'Rare'),
+(9, 'Sentinel Blade', 'Sword', 'Epic'),
+(10, 'Silver Staff', 'Staff', 'Common');
