@@ -1,208 +1,39 @@
-/* Magical Girl Archive System - Gothic UI */
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Character</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a class="button secondary" href="/">← Back Home</a>
 
-* {
-    box-sizing: border-box;
-}
+        <h1>Add New Character</h1>
+        <p>Add a new magical girl record to the archive.</p>
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Georgia, "Times New Roman", serif;
-    background:
-        radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(192, 132, 252, 0.18), transparent 35%),
-        #090611;
-    color: #f5edff;
-}
+        <form method="POST" class="form-card">
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-}
+            <label>Age</label>
+            <input type="number" name="age" min="0" required>
 
-.container {
-    width: min(1100px, 92%);
-    margin: 70px auto;
-    padding: 42px;
-    background: rgba(24, 16, 42, 0.88);
-    border: 1px solid rgba(216, 180, 254, 0.22);
-    border-radius: 26px;
-    box-shadow:
-        0 0 40px rgba(139, 92, 246, 0.22),
-        inset 0 0 40px rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-}
+            <label>Origin</label>
+            <input type="text" name="origin">
 
-h1 {
-    margin: 0 0 18px;
-    font-size: clamp(38px, 6vw, 64px);
-    line-height: 1;
-    color: #e9d5ff;
-    letter-spacing: -1px;
-    text-shadow: 0 0 25px rgba(216, 180, 254, 0.35);
-}
+            <label>Status</label>
+            <select name="status" required>
+                <option value="Active">Active</option>
+                <option value="Unstable">Unstable</option>
+                <option value="Critical">Critical</option>
+                <option value="Corrupted">Corrupted</option>
+            </select>
 
-h2 {
-    color: #d8b4ff;
-    margin-top: 30px;
-}
+            <label>Stability Level</label>
+            <input type="number" name="stability" min="0" max="100" required>
 
-p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #eee2ff;
-}
-
-a {
-    color: inherit;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 18px;
-    margin-right: 12px;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #a855f7, #6d28d9);
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 999px;
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-    border: 1px solid rgba(255,255,255,0.18);
-    box-shadow: 0 10px 25px rgba(109, 40, 217, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 35px rgba(168, 85, 247, 0.45);
-}
-
-.button.secondary {
-    background: rgba(76, 29, 149, 0.85);
-}
-
-/* Character grid */
-
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-    margin-top: 34px;
-}
-
-.card {
-    position: relative;
-    background: linear-gradient(180deg, rgba(42, 27, 70, 0.95), rgba(25, 16, 43, 0.95));
-    padding: 24px;
-    border-radius: 22px;
-    border: 1px solid rgba(216, 180, 254, 0.18);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
-    overflow: hidden;
-}
-
-.card::before {
-    content: "✦";
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    color: rgba(216, 180, 254, 0.35);
-    font-size: 22px;
-}
-
-.card h2 {
-    margin-top: 0;
-    color: #f0d9ff;
-    font-size: 26px;
-}
-
-.card p {
-    margin: 8px 0;
-    font-size: 15px;
-}
-
-/* Detail page */
-
-.detail-card {
-    margin-top: 25px;
-    border-left: 5px solid #c084fc;
-}
-
-.timeline {
-    margin-top: 20px;
-    display: grid;
-    gap: 18px;
-}
-
-.log-card {
-    border-left: 5px solid #8b5cf6;
-}
-
-strong {
-    color: #f3d9ff;
-}
-
-/* Forms */
-
-.form-card {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    background: linear-gradient(180deg, rgba(42, 27, 70, 0.95), rgba(25, 16, 43, 0.95));
-    padding: 28px;
-    border-radius: 22px;
-    border: 1px solid rgba(216, 180, 254, 0.18);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
-}
-
-label {
-    color: #e9d5ff;
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 13px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(192, 132, 252, 0.45);
-    background: rgba(9, 6, 17, 0.88);
-    color: #f4ecff;
-    font-size: 15px;
-    outline: none;
-}
-
-input:focus,
-select:focus {
-    border-color: #d8b4ff;
-    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18);
-}
-
-button {
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Small screen cleanup */
-
-@media (max-width: 700px) {
-    .container {
-        margin: 30px auto;
-        padding: 26px;
-    }
-
-    .button {
-        display: block;
-        text-align: center;
-        margin-right: 0;
-    }
-}
+            <button type="submit" class="button">Add Character</button>
+        </form>
+    </div>
+</body>
+</html>
