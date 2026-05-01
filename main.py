@@ -3,7 +3,11 @@ from database import (
     view_all_characters,
     search_character_by_name,
     view_low_stability_characters,
-    view_character_abilities
+    view_character_abilities,
+    add_character,
+    add_ability,
+    update_character_stability,
+    delete_character
 )
 
 
@@ -15,7 +19,11 @@ def display_menu():
     print("2. Search character by name")
     print("3. View low stability characters")
     print("4. View character abilities")
-    print("5. Exit")
+    print("5. Add character")
+    print("6. Add ability")
+    print("7. Update character stability")
+    print("8. Delete character")
+    print("9. Exit")
 
 
 def main():
@@ -41,13 +49,39 @@ def main():
 
         elif choice == "4":
             view_character_abilities(connection)
-
+            
         elif choice == "5":
+            name = input("Name: ")
+            age = int(input("Age: "))
+            origin = input("Origin: ")
+            status = input("Status: ")
+            stability = int(input("Stability: "))
+
+            add_character(connection, name, age, origin, status, stability)
+
+        elif choice == "6":
+            name = input("Ability Name: ")
+            ability_type = input("Type: ")
+            description = input("Description: ")
+            power = int(input("Power Level (1-10): "))
+
+            add_ability(connection, name, ability_type, description, power)
+
+        elif choice == "7":
+            character_id = int(input("Character ID: "))
+            stability = int(input("New Stability: "))
+
+            update_character_stability(connection, character_id, stability)
+
+        elif choice == "8":
+            character_id = int(input("Character ID to delete: "))
+
+            delete_character(connection, character_id)
+
+        elif choice == "9":
             print("Closing archive. Goodbye.")
             break
-
-        else:
-            print("Invalid option. Please choose 1-5.")
+        
 
     connection.close()
 
