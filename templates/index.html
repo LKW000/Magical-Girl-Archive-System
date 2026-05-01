@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +5,42 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Magical Girl Archive System</h1>
-        <p>A database system for tracking magical girl characters, abilities, contracts, transformations, and state changes.</p>
+    <main class="archive-shell">
+        <section class="hero-panel">
+            <p class="eyebrow">Moonveil Registry / Database Archive</p>
 
-        <a class="button" href="/characters">View Characters</a>
-        <a class="button secondary" href="/add-character">Add Character</a>
-    </div>
+            <h1>Magical Girl Archive System</h1>
+
+            <p class="hero-text">
+                A structured archive for tracking magical girl characters, contracts,
+                abilities, transformations, and changes in emotional condition over time.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button" href="/characters">Enter Archive</a>
+                <a class="button ghost" href="/add-character">Add New Record</a>
+            </div>
+        </section>
+
+        <section class="archive-overview">
+            <div class="info-card">
+                <span class="symbol">✦</span>
+                <h2>Character Dossiers</h2>
+                <p>View core identity records, origins, status, and stability levels.</p>
+            </div>
+
+            <div class="info-card">
+                <span class="symbol">☾</span>
+                <h2>State Tracking</h2>
+                <p>Follow condition changes through stability, corruption, and emotional logs.</p>
+            </div>
+
+            <div class="info-card">
+                <span class="symbol">♢</span>
+                <h2>Contract Records</h2>
+                <p>Organize wishes, costs, abilities, and transformation risks as structured data.</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
