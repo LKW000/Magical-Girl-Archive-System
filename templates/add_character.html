@@ -1,32 +1,40 @@
 
-.form-card {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: #25163d;
-    padding: 24px;
-    border-radius: 14px;
-    box-shadow: 0 0 20px rgba(140, 90, 255, 0.15);
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Character</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a class="button secondary" href="/">← Back Home</a>
 
-label {
-    color: #e9d5ff;
-    font-weight: bold;
-}
+        <h1>Add New Character</h1>
+        <p>Add a new magical girl record to the archive.</p>
 
-input,
-select {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #6d28d9;
-    background: #12091f;
-    color: #f4ecff;
-    font-size: 15px;
-}
+        <form method="POST" class="form-card">
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-button {
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
+            <label>Age</label>
+            <input type="number" name="age" min="0" required>
+
+            <label>Origin</label>
+            <input type="text" name="origin">
+
+            <label>Status</label>
+            <select name="status" required>
+                <option value="Active">Active</option>
+                <option value="Unstable">Unstable</option>
+                <option value="Critical">Critical</option>
+                <option value="Corrupted">Corrupted</option>
+            </select>
+
+            <label>Stability Level</label>
+            <input type="number" name="stability" min="0" max="100" required>
+
+            <button type="submit" class="button">Add Character</button>
+        </form>
+    </div>
+</body>
+</html>
