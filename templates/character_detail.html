@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ character.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a class="button secondary" href="/characters">← Back to Characters</a>
+
+        <h1>{{ character.name }}</h1>
+
+        <div class="card detail-card">
+            <p><strong>Age:</strong> {{ character.age }}</p>
+            <p><strong>Origin:</strong> {{ character.origin }}</p>
+            <p><strong>Status:</strong> {{ character.current_status }}</p>
+            <p><strong>Stability Level:</strong> {{ character.stability_level }}</p>
+        </div>
+
+        <h2>State History</h2>
+
+        <div class="timeline">
+            {% for log in logs %}
+                <div class="card log-card">
+                    <p><strong>Date:</strong> {{ log.recorded_date }}</p>
+                    <p><strong>Stability:</strong> {{ log.stability_level }}</p>
+                    <p><strong>Corruption:</strong> {{ log.corruption_level }}</p>
+                    <p><strong>Emotional State:</strong> {{ log.emotional_state }}</p>
+                    <p>{{ log.notes }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
