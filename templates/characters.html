@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Characters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Character Archive</h1>
+
+        <a class="button" href="/">← Back Home</a>
+
+        <div class="character-grid">
+            {% for character in characters %}
+                <div class="card">
+                    <h2>{{ character.name }}</h2>
+                    <p>Age: {{ character.age }}</p>
+                    <p>Origin: {{ character.origin }}</p>
+                    <p>Status: {{ character.current_status }}</p>
+                    <p>Stability: {{ character.stability_level }}</p>
+
+                    <a class="button secondary" href="/characters/{{ character.character_id }}">
+                        View Details
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
