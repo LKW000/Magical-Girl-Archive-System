@@ -57,3 +57,21 @@ p {
     margin-top: 0;
     color: #d8b4ff;
 }
+
+.detail-card {
+    margin-top: 25px;
+    border-left: 4px solid #c084fc;
+}
+
+.timeline {
+    margin-top: 20px;
+}
+
+.log-card {
+    margin-bottom: 16px;
+    border-left: 4px solid #8b5cf6;
+}
+
+strong {
+    color: #e9d5ff;
+}
