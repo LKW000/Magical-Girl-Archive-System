@@ -99,15 +99,6 @@ The Flask web app includes:
 ### Add Character Page
 ![Add Character Page](screenshots/add-character.png)
 
----
-
-## Setup Instructions
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/LKW000/Magical-Girl-Archive-System.git
-cd Magical-Girl-Archive-System
 
 ## Known Bugs or Limitations
 
@@ -125,3 +116,15 @@ I did not realize this project would be quite this difficult. My main issue at f
 The most important thing I learned from this project was the importance of planning and database design. Every part of the project relied heavily on how I planned my tables, relationships, and constraints, including primary keys and foreign keys.
 
 Another thing I really enjoyed was creating the Flask UI. It added personal flair to my project, and I feel like I transformed it from simply another database into an eerie archive of lore, state history, and character dossiers that fit the aesthetic I was going for.
+
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/LKW000/Magical-Girl-Archive-System.git
+cd Magical-Girl-Archive-System
+
