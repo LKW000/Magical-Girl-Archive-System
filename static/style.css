@@ -633,3 +633,48 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+.detail-subtext {
+    max-width: 760px;
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.section-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.stack-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.mini-card {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(12, 8, 20, 0.82);
+    border: 1px solid rgba(216, 180, 254, 0.14);
+}
+
+.mini-card h3 {
+    margin: 0 0 10px;
+    color: var(--lavender);
+}
+
+.mini-card p {
+    margin: 8px 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+}
