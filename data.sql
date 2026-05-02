@@ -17,16 +17,16 @@ ALTER TABLE state_log AUTO_INCREMENT = 1;
 
 
 INSERT INTO characters (name, age, origin, current_status, stability_level, lore_summary) VALUES
-('Madoka Kaname', 14, 'Mitakihara City', 'Active', 90),
-('Homura Akemi', 14, 'Mitakihara City', 'Unstable', 65),
-('Sayaka Miki', 14, 'Mitakihara City', 'Critical', 35),
-('Mami Tomoe', 15, 'Mitakihara City', 'Active', 82),
-('Kyoko Sakura', 15, 'Kazamino City', 'Active', 75),
-('Nagisa Momoe', 12, 'Mitakihara City', 'Active', 70),
-('Iroha Tamaki', 15, 'Takarazaki City', 'Active', 85),
-('Yachiyo Nanami', 19, 'Kamihama City', 'Active', 78),
-('Tsuruno Yui', 17, 'Kamihama City', 'Active', 88),
-('Mifuyu Azusa', 18, 'Kamihama City', 'Unstable', 60);
+('Madoka Kaname', 14, 'Mitakihara City', 'Active', 90, 'A gentle and compassionate girl whose immense potential places her at the center of the magical girl system. Her selfless nature and fate make her one of the most important figures in the archive.'),
+('Homura Akemi', 14, 'Mitakihara City', 'Unstable', 65, 'A time-looping magical girl who repeatedly rewinds events in an attempt to protect Madoka. Her isolation, obsession, and endurance make her one of the archive’s most psychologically strained figures.'),
+('Sayaka Miki', 14, 'Mitakihara City', 'Critical', 35, 'An idealistic girl who makes a wish to heal someone she loves, only to face emotional conflict, jealousy, and despair. Her record reflects the tragic cost of hope under pressure.'),
+('Mami Tomoe', 15, 'Mitakihara City', 'Active', 82, 'A veteran magical girl who acts as a poised mentor figure. Beneath her elegance and confidence is a deep loneliness shaped by survival and responsibility.'),
+('Kyoko Sakura', 15, 'Kazamino City', 'Active', 75, 'A fierce and independent magical girl whose hardened attitude hides regret and grief. Her archive record reflects survival instincts shaped by loss and family collapse.'),
+('Nagisa Momoe', 12, 'Mitakihara City', 'Active', 70, 'A younger magical girl associated with sweets and strange instability. Her presence in the archive blends innocence with unsettling supernatural symbolism.'),
+('Iroha Tamaki', 15, 'Takarazaki City', 'Active', 85, 'A determined magical girl from Kamihama who becomes involved in rumors, mysteries, and hidden truths while searching for answers connected to her sister.'),
+('Yachiyo Nanami', 19, 'Kamihama City', 'Active', 78, 'An experienced and guarded magical girl from Kamihama. Her leadership is shaped by guilt, loss, and the pressure of protecting those around her.'),
+('Tsuruno Yui', 17, 'Kamihama City', 'Active', 88, 'An upbeat and energetic fighter whose cheerful persona masks emotional pressure and exhaustion. Her dossier reflects strength mixed with internal strain.'),
+('Mifuyu Azusa', 18, 'Kamihama City', 'Unstable', 60, 'A former ally whose divided loyalties reflect fear, emotional fatigue, and disillusionment. Her record captures the tension between idealism and compromise.');
 
 INSERT INTO abilities (ability_name, ability_type, description, power_level) VALUES
 ('Reality Manipulation', 'Divine', 'Can alter the structure of reality itself.', 10),
