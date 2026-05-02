@@ -85,7 +85,7 @@ The Flask web app includes:
 
 ---
 
-## Screenshots
+##  Screenshots
 
 ### Home Page
 ![Home Page](screenshots/home.png)
@@ -108,3 +108,20 @@ The Flask web app includes:
 ```bash
 git clone https://github.com/LKW000/Magical-Girl-Archive-System.git
 cd Magical-Girl-Archive-System
+
+## Known Bugs or Limitations
+
+- While the web app can currently add characters, editing and deleting characters is done in the command-line app.
+- The web app does not have filtering or search at this time.
+- Only basic character information can be added through the web app. For now, weapons, abilities, contracts, and transformations still need to be added through the command-line app or database.
+- Some character information is simplified because this is a school project, and the main focus is database design.
+
+---
+
+## Reflection
+
+I did not realize this project would be quite this difficult. My main issue at first was getting MySQL to work. I struggled to find documentation and help to get my MySQL server up and running. After it was working, the rest of the project fell into place more smoothly.
+
+The most important thing I learned from this project was the importance of planning and database design. Every part of the project relied heavily on how I planned my tables, relationships, and constraints, including primary keys and foreign keys.
+
+Another thing I really enjoyed was creating the Flask UI. It added personal flair to my project, and I feel like I transformed it from simply another database into an eerie archive of lore, state history, and character dossiers that fit the aesthetic I was going for.
