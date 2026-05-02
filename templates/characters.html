@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Characters</title>
+    <title>Character Archive</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Character Archive</h1>
+    <main class="archive-shell">
+        <nav class="top-nav">
+            <a href="/">Archive Home</a>
+            <a href="/add-character">Add Record</a>
+        </nav>
 
-        <a class="button" href="/">← Back Home</a>
+        <section class="page-header">
+            <p class="eyebrow">Registry Index</p>
+            <h1>Character Dossiers</h1>
+            <p>
+                Browse magical girl records by status, origin, and stability level.
+                Each dossier stores structured information from the archive database.
+            </p>
+        </section>
 
-        <div class="character-grid">
+        <section class="dossier-grid">
             {% for character in characters %}
-                <div class="card">
-                    <h2>{{ character.name }}</h2>
-                    <p>Age: {{ character.age }}</p>
-                    <p>Origin: {{ character.origin }}</p>
-                    <p>Status: {{ character.current_status }}</p>
-                    <p>Stability: {{ character.stability_level }}</p>
+                <article class="dossier-card">
+                    <div class="file-label">
+                        FILE NO. {{ "%03d"|format(character.character_id) }}
+                    </div>
 
-                    <a class="button secondary" href="/characters/{{ character.character_id }}">
-                        View Details
+                    <h2>{{ character.name }}</h2>
+
+                    <div class="status-row">
+                        <span class="status-badge status-{{ character.current_status|lower }}">
+                            {{ character.current_status }}
+                        </span>
+                    </div>
+
+                    <div class="record-list">
+                        <p><span>Age</span>{{ character.age }}</p>
+                        <p><span>Origin</span>{{ character.origin }}</p>
+                        <p><span>Stability</span>{{ character.stability_level }}%</p>
+                    </div>
+
+                    <div class="stability-track">
+                        <div class="stability-fill" style="width: {{ character.stability_level }}%;"></div>
+                    </div>
+
+                    <a class="dossier-link" href="/characters/{{ character.character_id }}">
+                        Open Dossier →
                     </a>
-                </div>
+                </article>
             {% endfor %}
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
