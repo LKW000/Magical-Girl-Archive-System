@@ -91,8 +91,9 @@ CREATE TABLE weapons (
 CREATE TABLE state_log (
     log_id INT AUTO_INCREMENT PRIMARY KEY,
     character_id INT NOT NULL,
-    stability_level INT CHECK (stability_level BETWEEN 0 AND 100),
-    corruption_level INT CHECK (corruption_level BETWEEN 0 AND 100),
+    stability_level INT DEFAULT 100 CHECK (stability_level BETWEEN 0 AND 100),
+    lore_summary TEXT,
+    corruption_level INT DEFAULT 0 CHECK (corruption_level BETWEEN 0 AND 100),
     emotional_state VARCHAR(50) NOT NULL,
     recorded_date DATE NOT NULL,
     notes TEXT,
