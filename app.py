@@ -40,17 +40,57 @@ def character_detail(character_id):
     character = cursor.fetchone()
 
     cursor.execute("""
-        SELECT s.stability_level, s.corruption_level, s.emotional_state, s.recorded_date, s.notes
-        FROM state_log s
-        WHERE s.character_id = %s
-        ORDER BY s.recorded_date DESC
+        SELECT ability_name, ability_type, description, power_level, mastery_level
+        FROM character_abilities ca
+        JOIN abilities a ON ca.ability_id = a.ability_id
+        WHERE ca.character_id = %s
+        ORDER BY mastery_level DESC
+    """, (character_id,))
+    abilities = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT weapon_name, weapon_type, rarity
+        FROM weapons
+        WHERE character_id = %s
+    """, (character_id,))
+    weapons = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT wish, contract_cost, contract_date, contract_status
+        FROM contracts
+        WHERE character_id = %s
+        ORDER BY contract_date DESC
+    """, (character_id,))
+    contracts = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT form_name, trigger_condition, risk_level
+        FROM transformations
+        WHERE character_id = %s
+        ORDER BY risk_level DESC
+    """, (character_id,))
+    transformations = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT stability_level, corruption_level, emotional_state, recorded_date, notes
+        FROM state_log
+        WHERE character_id = %s
+        ORDER BY recorded_date DESC
     """, (character_id,))
     logs = cursor.fetchall()
 
     cursor.close()
     connection.close()
 
-    return render_template("character_detail.html", character=character, logs=logs)
+    return render_template(
+        "character_detail.html",
+        character=character,
+        abilities=abilities,
+        weapons=weapons,
+        contracts=contracts,
+        transformations=transformations,
+        logs=logs
+    )
 
 
 @app.route("/add-character", methods=["GET", "POST"])
