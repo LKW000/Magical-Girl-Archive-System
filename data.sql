@@ -16,7 +16,7 @@ ALTER TABLE weapons AUTO_INCREMENT = 1;
 ALTER TABLE state_log AUTO_INCREMENT = 1;
 
 
-INSERT INTO characters (name, age, origin, current_status, stability_level) VALUES
+INSERT INTO characters (name, age, origin, current_status, stability_level, lore_summary) VALUES
 ('Madoka Kaname', 14, 'Mitakihara City', 'Active', 90),
 ('Homura Akemi', 14, 'Mitakihara City', 'Unstable', 65),
 ('Sayaka Miki', 14, 'Mitakihara City', 'Critical', 35),
