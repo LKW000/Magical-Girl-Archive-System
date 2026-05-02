@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +19,10 @@
                 <span class="status-badge status-{{ character.current_status|lower }}">
                     {{ character.current_status }}
                 </span>
+
+                <p class="detail-subtext">
+                    {{ character.lore_summary }}
+                </p>
             </div>
 
             <div class="detail-grid">
@@ -36,11 +39,85 @@
                 </div>
 
                 <div class="archive-box">
-                    <h2>Archive Note</h2>
+                    <h2>Lore Summary</h2>
                     <p>
-                        This record tracks the character’s current state as structured data.
-                        Stability levels and emotional logs are used to show progression over time.
+                        {{ character.lore_summary }}
                     </p>
+                </div>
+            </div>
+
+            <div class="section-grid">
+                <div class="archive-box">
+                    <h2>Weapon Records</h2>
+                    {% if weapons %}
+                        <div class="stack-list">
+                            {% for weapon in weapons %}
+                                <div class="mini-card">
+                                    <h3>{{ weapon.weapon_name }}</h3>
+                                    <p><strong>Type:</strong> {{ weapon.weapon_type }}</p>
+                                    <p><strong>Rarity:</strong> {{ weapon.rarity }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No weapon records found.</p>
+                    {% endif %}
+                </div>
+
+                <div class="archive-box">
+                    <h2>Ability Records</h2>
+                    {% if abilities %}
+                        <div class="stack-list">
+                            {% for ability in abilities %}
+                                <div class="mini-card">
+                                    <h3>{{ ability.ability_name }}</h3>
+                                    <p><strong>Type:</strong> {{ ability.ability_type }}</p>
+                                    <p><strong>Power:</strong> {{ ability.power_level }}/10</p>
+                                    <p><strong>Mastery:</strong> {{ ability.mastery_level }}/10</p>
+                                    <p>{{ ability.description }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No ability records found.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="section-grid">
+                <div class="archive-box">
+                    <h2>Contract Record</h2>
+                    {% if contracts %}
+                        <div class="stack-list">
+                            {% for contract in contracts %}
+                                <div class="mini-card">
+                                    <p><strong>Wish:</strong> {{ contract.wish }}</p>
+                                    <p><strong>Cost:</strong> {{ contract.contract_cost }}</p>
+                                    <p><strong>Status:</strong> {{ contract.contract_status }}</p>
+                                    <p><strong>Date:</strong> {{ contract.contract_date }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No contract records found.</p>
+                    {% endif %}
+                </div>
+
+                <div class="archive-box">
+                    <h2>Transformation Record</h2>
+                    {% if transformations %}
+                        <div class="stack-list">
+                            {% for transformation in transformations %}
+                                <div class="mini-card">
+                                    <h3>{{ transformation.form_name }}</h3>
+                                    <p><strong>Trigger:</strong> {{ transformation.trigger_condition }}</p>
+                                    <p><strong>Risk Level:</strong> {{ transformation.risk_level }}/10</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No transformation records found.</p>
+                    {% endif %}
                 </div>
             </div>
 
