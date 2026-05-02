@@ -1,39 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Character</title>
+    <title>Add New Record</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <a class="button secondary" href="/">← Back Home</a>
+    <main class="archive-shell">
+        <nav class="top-nav">
+            <a href="/">Archive Home</a>
+            <a href="/characters">Character Index</a>
+        </nav>
 
-        <h1>Add New Character</h1>
-        <p>Add a new magical girl record to the archive.</p>
+        <section class="add-record-layout">
+            <aside class="record-intro">
+                <p class="eyebrow">Registry Intake / New Dossier</p>
+                <h1>Add New Record</h1>
 
-        <form method="POST" class="form-card">
-            <label>Name</label>
-            <input type="text" name="name" required>
+                <p class="intro-text">
+                    Submit a new magical girl entry into the archive registry.
+                    Each dossier stores core identity data, current status, and
+                    stability levels for later tracking and analysis.
+                </p>
 
-            <label>Age</label>
-            <input type="number" name="age" min="0" required>
+                <div class="intro-card">
+                    <h2>Archive Intake Notes</h2>
+                    <ul class="archive-note-list">
+                        <li>Each record should use a unique character name.</li>
+                        <li>Status reflects the current archived condition.</li>
+                        <li>Stability should be entered on a 0–100 scale.</li>
+                        <li>Additional state history can be added later.</li>
+                    </ul>
+                </div>
 
-            <label>Origin</label>
-            <input type="text" name="origin">
+                <div class="intro-card">
+                    <h2>Record Categories</h2>
+                    <div class="chip-group">
+                        <span class="archive-chip">Identity</span>
+                        <span class="archive-chip">Status</span>
+                        <span class="archive-chip">Stability</span>
+                        <span class="archive-chip">Registry Entry</span>
+                    </div>
+                </div>
+            </aside>
 
-            <label>Status</label>
-            <select name="status" required>
-                <option value="Active">Active</option>
-                <option value="Unstable">Unstable</option>
-                <option value="Critical">Critical</option>
-                <option value="Corrupted">Corrupted</option>
-            </select>
+            <section class="record-form-panel">
+                <div class="form-panel-header">
+                    <p class="eyebrow">Dossier Entry Form</p>
+                    <h2>Create Character Dossier</h2>
+                    <p>
+                        Complete the intake fields below to register a new archive entry.
+                    </p>
+                </div>
 
-            <label>Stability Level</label>
-            <input type="number" name="stability" min="0" max="100" required>
+                <form method="POST" class="form-card enhanced-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <small class="field-help">Enter the character’s full archive name.</small>
+                    </div>
 
-            <button type="submit" class="button">Add Character</button>
-        </form>
-    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stability">Stability Level</label>
+                            <input type="number" id="stability" name="stability" min="0" max="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="origin">Origin</label>
+                        <input type="text" id="origin" name="origin">
+                        <small class="field-help">Example: Mitakihara City, Kamihama City, etc.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Unstable">Unstable</option>
+                            <option value="Critical">Critical</option>
+                            <option value="Corrupted">Corrupted</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button submit-wide">Seal Archive Entry</button>
+                </form>
+            </section>
+        </section>
+    </main>
 </body>
 </html>

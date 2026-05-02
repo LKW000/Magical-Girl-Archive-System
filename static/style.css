@@ -502,3 +502,134 @@ button {
         padding: 36px;
     }
 }
+
+/* Add Character Page Glow-Up */
+
+.add-record-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.record-intro,
+.record-form-panel {
+    padding: 30px;
+    border-radius: 28px;
+    background: rgba(18, 12, 30, 0.88);
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+}
+
+.record-intro h1 {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 0.95;
+    margin-bottom: 18px;
+}
+
+.intro-text {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.intro-card {
+    margin-top: 18px;
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(12, 8, 20, 0.82);
+    border: 1px solid rgba(216, 180, 254, 0.14);
+}
+
+.intro-card h2 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.archive-note-list {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.archive-note-list li {
+    margin-bottom: 8px;
+}
+
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.archive-chip {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(216, 180, 254, 0.09);
+    border: 1px solid rgba(216, 180, 254, 0.18);
+    color: var(--lavender);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.form-panel-header {
+    margin-bottom: 18px;
+}
+
+.form-panel-header h2 {
+    margin: 0 0 10px;
+    font-size: 34px;
+    color: #f0ddff;
+}
+
+.form-panel-header p {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.enhanced-form {
+    margin-top: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field-help {
+    color: rgba(200, 183, 221, 0.75);
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+
+.submit-wide {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (max-width: 900px) {
+    .add-record-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
